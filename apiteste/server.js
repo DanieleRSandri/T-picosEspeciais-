@@ -23,3 +23,11 @@ MongoClient.connect(uri, (err, client) => {
 app.get('/', (req, res) => {
     res.send('Atendida a requisição GET!!');
    }); 
+
+   // rotas para animais
+const animais = require('./animais');
+animais(app);
+
+// rotas para colaborador
+const colaborador = require('./colaborador');
+colaborador(app);
