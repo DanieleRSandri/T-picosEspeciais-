@@ -29,24 +29,26 @@ module.exports = {
     },
 
     obterPeloId: async (req, res) => {
-        const obj = await Colaborador.findOne({ _id: req.params.id }, function (err) {
+        Colaborador.findOne({ _id: req.params.id }, function (err, obj) {
             if (err)
                 res.status(400).send(err);
+            res.status(200).json(obj);
         });
-        res.status(200).json(obj);
+
     },
 
     filtrar: async (req, res) => {
-        const objetos = await Colaborador.find({
+        Colaborador.find({
             $or: [
                 { nome: { $regex: req.params.filtro, $options: "i" } },
                 { email: { $regex: req.params.filtro, $options: "i" } },
             ],
-        }, function (err) {
+        }, function (err, objetos) {
             if (err)
                 res.status(400).send(err);
+            res.json(objetos);
         }).sort({ nome: -1 }); // -1 decrescente 1 crescente
-        res.json(objetos);
+
     },
 
 

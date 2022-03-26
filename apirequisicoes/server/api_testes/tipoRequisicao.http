@@ -1,0 +1,47 @@
+﻿# Obter a lista de Tipo Requisição
+GET http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+###
+
+# Inserir novo Tipo Requisição
+POST http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+
+{
+ "descricao": "Daniele Sandri"
+}
+###
+
+# Tipo Requisição sem descrição requerido.
+POST http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+
+{
+"descricao": ""
+}
+###
+
+# Alterar Tipo Requisição
+PUT http://localhost:3000/api/tipoRequisicao
+Content-Type: application/json
+
+{
+  "descricao": "Daniele Sandri Teste2",
+  "_id": "623e53e0ff90c2044665b8fa"
+}
+###
+
+# Excluir um Tipo Requisição
+DELETE http://localhost:3000/api/tipoRequisicao/623e5394ff90c2044665b8f7
+Content-Type: application/json
+###
+
+# Obter pelo id de Tipo Requisição
+GET http://localhost:3000/api/tipoRequisicao/623e5662395410d5d2a64696
+Content-Type: application/json
+###
+
+# Obter Tipo Requisição filtrando
+GET http://localhost:3000/api/tipoRequisicao/filtro/Daniele
+Content-Type: application/json
+###

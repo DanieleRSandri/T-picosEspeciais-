@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
  "nome": "Daniele Sandri2", 
- "email": "135966@teste2.br",
+ "email": "135966@teste3.br",
  "senha": "123"
 }
 ###
@@ -47,13 +47,14 @@ Content-Type: application/json
   "senha": "123"
 }
 ###
+
 # Excluir um colaborador
 DELETE http://localhost:3000/api/colaboradores/623e431904b80d2556e49ce5
 Content-Type: application/json
 ###
 
 # Obter pelo id de colaborador
-GET http://localhost:3000/api/colaboradores/623525f8bc97f2b0c315be3a
+GET http://localhost:3000/api/colaboradores/623e490358a3afc5d1561612
 Content-Type: application/json
 ###
 
