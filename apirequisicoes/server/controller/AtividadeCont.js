@@ -3,11 +3,10 @@
 module.exports = {
 
     listar: async (req, res) => {
-        Projeto.find((err, objetos) => {
+        Atividade.find((err, objetos) => {
         (err ? res.status(400).send(`${err}`) : res.status(200).json(objetos));
-        }).populate('Requisicao').populate('Colaborador').sort({ titulo: 1 }); // -1 decrescente 1 crescente
+        }).populate('requisicao').populate('colaborador').sort({ titulo: 1 }); // -1 decrescente 1 crescente
         },
-
 
     incluir: async (req, res) => {
         let obj = new Atividade(req.body);

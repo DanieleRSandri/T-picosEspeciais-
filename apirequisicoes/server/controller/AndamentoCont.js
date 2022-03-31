@@ -3,9 +3,9 @@
 module.exports = {
 
     listar: async (req, res) => {
-        Projeto.find((err, objetos) => {
+        Andamento.find((err, objetos) => {
         (err ? res.status(400).send(`${err}`) : res.status(200).json(objetos));
-        }).populate('atividade').populate('colaborador').sort({ titulo: 1 }); // -1 decrescente 1 crescente
+        }).populate('colaborador').populate('atividade').sort({ titulo: 1 }); // -1 decrescente 1 crescente
         },
 
 

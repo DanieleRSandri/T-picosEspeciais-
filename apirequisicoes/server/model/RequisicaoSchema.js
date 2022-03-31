@@ -13,7 +13,7 @@ const RequisicaoSchema = new mongoose.Schema({
     },
     solicitante: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'solicitante',
+        ref: 'Solicitante',
         require: true,
     },
 
