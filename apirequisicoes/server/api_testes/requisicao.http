@@ -18,51 +18,33 @@ Content-Type: application/json
 }
 ###
 
-# colaborador sem nome requerido.
-POST http://localhost:3000/api/requisicao
-Content-Type: application/json
-
-{
- "nome": "",
- "email": "135966@upf.br",
- "senha": "123",
-}
-###
-
-# colaborador com email duplicado.
-POST http://localhost:3000/api/requisicao
-Content-Type: application/json
-
-{
- "nome": "Daniele",
- "email": "135966@upf.br",
- "senha": "123",
-}
-###
-
-# Alterar colaborador
+# Alterar requisicao
 PUT http://localhost:3000/api/requisicao
 Content-Type: application/json
 
 {
- "_id": "623e403951728b9a00efedce",
- "nome": "Daniele alterado",
- "email": "135966@testeteste.com",
-  "senha": "123"
+ "_id": "623e676f3c045dd27b0851b2",
+  "titulo": "Teste altera requisicao",
+  "descricao": "Teste",
+  "dataHoraCriada": "2022-03-25T00:00:00.000Z",
+  "status": "Inicio",
+  "prazoAtendimento": "2022-03-26T00:00:00.000Z",
+  "tipoRequisicao": "623e5662395410d5d2a64696",
+  "solicitante": "623e508da3fbde374ba18c23"
 }
 ###
 
-# Excluir um colaborador
-DELETE http://localhost:3000/api/requisicao/623e431904b80d2556e49ce5
+# Excluir uma requisicao
+DELETE http://localhost:3000/api/requisicao/6244f82b0405f645d9e88a7e
 Content-Type: application/json
 ###
 
-# Obter pelo id de colaborador
-GET http://localhost:3000/api/requisicao/623e490358a3afc5d1561612
+# Obter pelo id da requisicao
+GET http://localhost:3000/api/requisicao/623e676f3c045dd27b0851b2
 Content-Type: application/json
 ###
 
-# Obter colaborador filtrando
-GET http://localhost:3000/api/requisicao/filtro/Daniele
+# Obter requisicao filtrando
+GET http://localhost:3000/api/requisicao/filtro/altera
 Content-Type: application/json
 ###

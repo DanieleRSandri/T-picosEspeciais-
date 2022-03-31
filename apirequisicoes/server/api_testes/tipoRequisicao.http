@@ -8,7 +8,7 @@ POST http://localhost:3000/api/tipoRequisicao
 Content-Type: application/json
 
 {
- "descricao": "Daniele Sandri"
+ "descricao": "Daniele Sandri2"
 }
 ###
 
@@ -26,18 +26,18 @@ PUT http://localhost:3000/api/tipoRequisicao
 Content-Type: application/json
 
 {
-  "descricao": "Daniele Sandri Teste2",
-  "_id": "623e53e0ff90c2044665b8fa"
+  "descricao": "Daniele Sandri Teste",
+  "_id": "623e5662395410d5d2a64696"
 }
 ###
 
 # Excluir um Tipo Requisição
-DELETE http://localhost:3000/api/tipoRequisicao/623e5394ff90c2044665b8f7
+DELETE http://localhost:3000/api/tipoRequisicao/623e5662395410d5d2a64696
 Content-Type: application/json
 ###
 
 # Obter pelo id de Tipo Requisição
-GET http://localhost:3000/api/tipoRequisicao/623e5662395410d5d2a64696
+GET http://localhost:3000/api/tipoRequisicao/6244f7070405f645d9e88a5e
 Content-Type: application/json
 ###
 

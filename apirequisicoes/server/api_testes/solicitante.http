@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
  "nome": "Daniele Sandri2", 
- "email": "135966@teste3.br",
+ "email": "135966@teste.br",
  "senha": "123"
 }
 ###
@@ -41,7 +41,7 @@ PUT http://localhost:3000/api/solicitante
 Content-Type: application/json
 
 {
- "_id": "623e403951728b9a00efedce",
+ "_id": "623e508da3fbde374ba18c23",
  "nome": "Daniele alterado",
  "email": "135966@testeteste.com",
   "senha": "123"
@@ -49,12 +49,12 @@ Content-Type: application/json
 ###
 
 # Excluir um solicitante
-DELETE http://localhost:3000/api/solicitante/623e431904b80d2556e49ce5
+DELETE http://localhost:3000/api/solicitante/6244edb80405f645d9e88a50
 Content-Type: application/json
 ###
 
 # Obter pelo id de solicitante
-GET http://localhost:3000/api/solicitante/623e490358a3afc5d1561612
+GET http://localhost:3000/api/solicitante/623e508da3fbde374ba18c23
 Content-Type: application/json
 ###
 

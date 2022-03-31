@@ -8,57 +8,61 @@ POST http://localhost:3000/api/atividade
 Content-Type: application/json
 
 {
- "nome": "Daniele Sandri2", 
- "email": "135966@teste3.br",
- "senha": "123"
+ "titulo": "teste", 
+ "descricao": "teste atividade2",
+ "status": "Inicio",
+ "prazo": "2022-03-26",
+ "agendaInicio":"2022-03-26",
+ "dataHoraTermino":"2022-03-26",
+ "requisicao":"623e676f3c045dd27b0851b2",
+ "colaborador":"623e490358a3afc5d1561612"
 }
 ###
 
-# colaborador sem nome requerido.
+# atividade sem titulo requerido.
 POST http://localhost:3000/api/atividade
 Content-Type: application/json
 
 {
- "nome": "",
- "email": "135966@upf.br",
- "senha": "123",
+ "titulo": "", 
+ "descricao": "teste atividade",
+ "status": "Inicio",
+ "prazo": "2022-03-26",
+ "agendaInicio":"2022-03-26",
+ "dataHoraTermino":"2022-03-26",
+ "requisicao":"623e676f3c045dd27b0851b2",
+ "colaborador":"623e490358a3afc5d1561612"
 }
 ###
 
-# colaborador com email duplicado.
-POST http://localhost:3000/api/atividade
-Content-Type: application/json
-
-{
- "nome": "Daniele",
- "email": "135966@upf.br",
- "senha": "123",
-}
-###
-
-# Alterar colaborador
+# Alterar atividade
 PUT http://localhost:3000/api/atividade
 Content-Type: application/json
 
 {
- "_id": "623e403951728b9a00efedce",
- "nome": "Daniele alterado",
- "email": "135966@testeteste.com",
-  "senha": "123"
+   "titulo": "teste",
+  "descricao": "teste atividade alterado",
+  "status": "Inicio",
+  "prazo": "2022-03-26T00:00:00.000Z",
+  "agendaInicio": "2022-03-26T00:00:00.000Z",
+  "dataHoraTermino": "2022-03-26T00:00:00.000Z",
+  "requisicao": "623e676f3c045dd27b0851b2",
+  "colaborador": "623e490358a3afc5d1561612",
+  "_id": "6244f9ca7718c59b0ebec35e"
 }
 ###
 
-# Excluir um colaborador
-DELETE http://localhost:3000/api/atividade/623e431904b80d2556e49ce5
+# Excluir uma atividade
+DELETE http://localhost:3000/api/atividade/6244f9b07718c59b0ebec35b
 Content-Type: application/json
 ###
 
-# Obter pelo id de colaborador
-GET http://localhost:3000/api/atividade/623e490358a3afc5d1561612
+# Obter pelo id da atividade
+GET http://localhost:3000/api/atividade/6244f9ca7718c59b0ebec35e
 Content-Type: application/json
 ###
 
-# Obter colaborador filtrando
-GET http://localhost:3000/api/atividade/filtro/Daniele
+# Obter atividade filtrando
+GET http://localhost:3000/api/atividade/filtro/teste 
 Content-Type: application/json
 ###

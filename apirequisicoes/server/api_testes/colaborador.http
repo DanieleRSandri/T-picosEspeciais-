@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
  "nome": "Daniele Sandri2", 
- "email": "135966@teste3.br",
+ "email": "135966@teste223.br",
  "senha": "123"
 }
 ###
@@ -41,7 +41,7 @@ PUT http://localhost:3000/api/colaboradores
 Content-Type: application/json
 
 {
- "_id": "623e403951728b9a00efedce",
+ "_id": "623e490358a3afc5d1561612",
  "nome": "Daniele alterado",
  "email": "135966@testeteste.com",
   "senha": "123"
@@ -49,7 +49,7 @@ Content-Type: application/json
 ###
 
 # Excluir um colaborador
-DELETE http://localhost:3000/api/colaboradores/623e431904b80d2556e49ce5
+DELETE http://localhost:3000/api/colaboradores/623525f8bc97f2b0c315be3a
 Content-Type: application/json
 ###
 

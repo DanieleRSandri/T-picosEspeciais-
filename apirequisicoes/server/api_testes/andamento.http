@@ -8,57 +8,52 @@ POST http://localhost:3000/api/andamento
 Content-Type: application/json
 
 {
- "nome": "Daniele Sandri2", 
- "email": "135966@teste3.br",
- "senha": "123"
+"dataHora": "2022-03-26",
+ "titulo": "teste andamento",
+ "descricao": "Teste3",
+ "colaborador":"623e490358a3afc5d1561612",
+  "atividade":"6244f9ca7718c59b0ebec35e"
 }
 ###
 
-# colaborador sem nome requerido.
+# andamento sem titulo requerido.
 POST http://localhost:3000/api/andamento
 Content-Type: application/json
 
 {
- "nome": "",
- "email": "135966@upf.br",
- "senha": "123",
+"dataHora": "2022-03-26",
+ "titulo": "",
+ "descricao": "Inicio",
+ "colaborador":"623e490358a3afc5d1561612",
+  "atividade":"6244f9ca7718c59b0ebec35e"
 }
 ###
 
-# colaborador com email duplicado.
-POST http://localhost:3000/api/andamento
-Content-Type: application/json
-
-{
- "nome": "Daniele",
- "email": "135966@upf.br",
- "senha": "123",
-}
-###
-
-# Alterar colaborador
+# Alterar andamento
 PUT http://localhost:3000/api/andamento
 Content-Type: application/json
 
 {
- "_id": "623e403951728b9a00efedce",
- "nome": "Daniele alterado",
- "email": "135966@testeteste.com",
-  "senha": "123"
+  "_id": "6244fadf3a3a135958a42e00",
+    "dataHora": "2022-03-26T00:00:00.000Z",
+    "titulo": "teste andamento",
+    "descricao": "Teste teste",
+    "colaborador": "623e490358a3afc5d1561612",
+    "atividade": "6244f9ca7718c59b0ebec35e"
 }
 ###
 
-# Excluir um colaborador
-DELETE http://localhost:3000/api/andamento/623e431904b80d2556e49ce5
+# Excluir um andamento
+DELETE http://localhost:3000/api/andamento/6244faa53a3a135958a42dfb
 Content-Type: application/json
 ###
 
-# Obter pelo id de colaborador
-GET http://localhost:3000/api/andamento/623e490358a3afc5d1561612
+# Obter pelo id do andamento
+GET http://localhost:3000/api/andamento/6244fadf3a3a135958a42e00
 Content-Type: application/json
 ###
 
-# Obter colaborador filtrando
-GET http://localhost:3000/api/andamento/filtro/Daniele
+# Obter andamento filtrando
+GET http://localhost:3000/api/andamento/filtro/Teste
 Content-Type: application/json
 ###
