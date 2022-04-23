@@ -1,0 +1,49 @@
+﻿# Obter a lista de agenda
+GET http://localhost:3000/api/agenda
+Content-Type: application/json
+###
+
+# Inserir nova agenda
+POST http://localhost:3000/api/agenda
+Content-Type: application/json
+
+{
+ "usuario": "Daniele Sandri2", 
+ "status": "Agendado",
+  "quadra": "Salão",
+ "data": "2022-04-22",
+  "tempo": "01:30",
+ "local": "Passo Fundo"
+}
+###
+
+
+# Alterar agenda
+PUT http://localhost:3000/api/agenda
+Content-Type: application/json
+
+{
+ "_id": "62636b5c0a0e02e3b6e17b89",
+  "usuario": "Daniele Sandri",
+  "status": "Cancelado",
+  "quadra": "Salão",
+  "data": "2022-04-22T00:00:00.000Z",
+  "tempo": "01:30",
+  "local": "Passo Fundo - Arena Petropolis"
+}
+###
+
+# Excluir um agenda
+DELETE http://localhost:3000/api/agenda/62636b430a0e02e3b6e17b87
+Content-Type: application/json
+###
+
+# Obter pelo id de agenda
+GET http://localhost:3000/api/agenda/62636b5e0a0e02e3b6e17b8b
+Content-Type: application/json
+###
+
+# Obter agenda filtrando
+GET http://localhost:3000/api/agenda/filtro/Cancelado
+Content-Type: application/json
+###

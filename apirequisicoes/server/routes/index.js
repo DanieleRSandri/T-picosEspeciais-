@@ -25,4 +25,7 @@ routes.use("/api", atividadeRout);
 const requisicaoRout = require("./RequisicaoRout");
 routes.use("/api", requisicaoRout);
 
+const agendaAvaliacaoRout = require("./AgendaAvaliacaoRout");
+routes.use("/api", agendaAvaliacaoRout);
+
 module.exports = routes;
