@@ -1,5 +1,4 @@
 const AgendaList = (props) => (
-
     
     <div>
         <h4>Lista de Agendamentos</h4>
@@ -11,7 +10,7 @@ const AgendaList = (props) => (
                 </tr>
             </thead>
             <tbody>
-                {props.agenda.length > 0 ? (props.agenda.map((o, index) => (
+                {props.agendas.length > 0 ? (props.agendas.map((o, index) => (
                     <tr key={index}>
                         <td>{o._id}</td> <td>{o.usuario}</td> <td>{o.status}</td> <td>{o.quadra}</td> <td>{o.data}</td> <td>{o.tempo}</td> <td>{o.local}</td>
                         <td>
