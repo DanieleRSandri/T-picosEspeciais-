@@ -20,11 +20,11 @@ function TipoRequisicaoCon() {
   const onClickAtualizar = () => {
     TipoRequisicaoSrv.listar().then((response) => {
       setTipoRequisicoes(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Tipo Requisição Atualizados!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   summary: "Tipo Requisição Atualizados!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         console.log("Erro: " + e.message);

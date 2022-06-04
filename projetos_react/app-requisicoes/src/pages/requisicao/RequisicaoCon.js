@@ -20,11 +20,11 @@ function RequisicaoCon() {
   const onClickAtualizar = () => {
     RequisicaoSrv.listar().then((response) => {
       setRequisicoes(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Requisições Atualizados!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   summary: "Requisições Atualizados!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         console.log("Erro: " + e.message);

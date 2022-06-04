@@ -6,6 +6,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Menu from './Menu';
 
+// const Login = lazy(() => import('./pages/login/Login'));
 const Home = lazy(() => import('./pages/home/Home'));
 const ColaboradorCon = lazy(() => import('./pages/colaborador/ColaboradorCon'));
 const SolicitanteCon = lazy(() => import('./pages/solicitante/SolicitanteCon'));
@@ -21,6 +22,7 @@ function App() {
 
       <Suspense fallback={<div>Carregando ...</div>}>
         <Routes>
+          {/* <Route path="/" element={<Login/>} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/colaborador" element={<ColaboradorCon />} />
           <Route path="/solicitante" element={<SolicitanteCon />} />

@@ -20,11 +20,11 @@ function SolicitanteCon() {
   const onClickAtualizar = () => {
     SolicitanteSrv.listar().then((response) => {
       setSolicitantes(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Solicitantes Atualizados!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   summary: "Solicitantes Atualizados!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         console.log("Erro: " + e.message);

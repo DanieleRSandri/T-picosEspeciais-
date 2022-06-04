@@ -20,11 +20,11 @@ function AndamentoCon() {
   const onClickAtualizar = () => {
     AndamentoSrv.listar().then((response) => {
       setAndamentos(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Colaboradores Atualizados!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   // summary: "Colaboradores Atualizados!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         console.log("Erro: " + e.message);

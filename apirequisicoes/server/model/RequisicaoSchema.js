@@ -9,12 +9,12 @@ const RequisicaoSchema = new mongoose.Schema({
       tipoRequisicao: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'TipoRequisicao',
-        //require: true,
+        require: true,
     },
     solicitante: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Solicitante',
-      //  require: true,
+       require: true,
     },
 
        

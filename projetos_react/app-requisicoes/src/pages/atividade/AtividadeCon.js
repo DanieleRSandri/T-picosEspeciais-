@@ -20,11 +20,11 @@ function AtividadeCon() {
   const onClickAtualizar = () => {
     AtividadeSrv.listar().then((response) => {
         setAtividades(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Atividades Atualizadas!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   summary: "Atividades Atualizadas!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         console.log("Erro: " + e.message);
