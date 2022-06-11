@@ -46,7 +46,7 @@ const ColaboradorForm = (props) => {
               <label htmlFor="email">Email</label>
               <InputText id="email" defaultValue={props.colaborador.email}
                {...register("email", { 
-                required: {value:false, message:"o email é obrigatória."}})}
+                required: {value:true, message:"O email é obrigatória."}})}
                 onChange={handleInputChange} />
                    {errors.email && <span style={{color:'red'}}>{errors.email.message}</span>}
             </div>

@@ -1,5 +1,4 @@
-﻿@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOWQyYmNkMDYwNTYyMThkZDdmOTEiLCJub21lIjoiRGFuaWVsZSBTYW5kcmkyIiwiaWF0IjoxNjU0MzA0NDM1LCJleHAiOjE2NTQzMDgwMzV9.y8IH5psgqJVwyNKwg7QyYDifyPkK3HJ6QT2HOLuJecw
-
+﻿@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOWQyYmNkMDYwNTYyMThkZDdmOTEiLCJub21lIjoiRGFuaWVsZSBTYW5kcmkyIiwiaWF0IjoxNjU0OTAxNDI4LCJleHAiOjE2NTQ5MDUwMjh9.vJQR5_4syCF4xqgalSR3WIwNnSa66uTOuGbAObMuXMs
 # Obter a lista de colaborador
 GET http://localhost:3000/api/colaboradores
 Content-Type: application/json
@@ -29,11 +28,12 @@ Content-Type: application/json
 # Inserir novo colaborador
 POST http://localhost:3000/api/colaboradores
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Daniele Sandri2", 
- "email": "135966@teste2223.br",
- "senha": "123"
+ "email": "dany.sandry11@hotmail.com",
+ "senha": "1234"
 }
 ###
 
