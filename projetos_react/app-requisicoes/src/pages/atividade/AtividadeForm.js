@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { InputText } from 'primereact/inputtext'
 import { Button } from 'primereact/button';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
+import RequisicaoSrv from "../requisicao/RequisicaoSrv";
+import ColaboradorSrv from "../colaborador/ColaboradorSrv"
 
 const AtividadeForm = (props) => {
   const handleInputChange = (event) => {
@@ -21,6 +23,28 @@ const onSubmit = data => {
     props.salvar();  
   
 }
+const [requisicoes, setRequisicoes] = useState([]);
+const [colaboradores, setColaboradores] = useState([]);
+
+useEffect(() => {
+  onClickAtualizar(); // ao inicializar execula método para atualizar
+}, []);
+
+const onClickAtualizar = () => {
+  RequisicaoSrv.listar().then((response) => {
+    setRequisicoes(response.data);
+  })
+    .catch((e) => {
+      console.log("Erro: " + e.message);
+    });
+
+  ColaboradorSrv.listar().then((response) => {
+    setColaboradores(response.data);
+  })
+    .catch((e) => {
+      console.log("Erro: " + e.message);
+    });
+};
 
 return (
   <form onSubmit={handleSubmit(onSubmit)}>
@@ -84,6 +108,23 @@ return (
               onChange={handleInputChange}></Calendar>
                  {errors.dataHoraTermino && <span style={{color:'red'}}>{errors.dataHoraTermino.message}</span>}
           </div>
+
+          <div className="field col-12 md:col-4">
+              <label htmlFor="requisicao">Requisição</label>
+              <Dropdown id="requisicao" name="requisicao" value={props.atividade.requisicao}
+                onChange={handleInputChange} options={requisicoes}
+                optionLabel="descricao" optionValue="_id" placeholder="Selecione uma requisicao" />
+              {errors.requisicao && <span style={{ color: 'red' }}>{errors.requisicao.message}</span>}
+            </div>
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="colaborador">Colaborador</label>
+              <Dropdown id="colaborador" name="colaborador" value={props.atividade.colaborador}
+                onChange={handleInputChange} options={colaboradores}
+                optionLabel="nome" optionValue="_id" placeholder="Selecione um colaborador" />
+              {errors.colaborador && <span style={{ color: 'red' }}>{errors.colaborador.message}</span>}
+            </div>
+
 
         </div>
         <p></p>

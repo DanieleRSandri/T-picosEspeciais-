@@ -10,19 +10,15 @@ const SolicitanteForm = (props) => {
     props.setSolicitante({ ...props.solicitante, [id]: value });
   };
 
-  const [senha, setSenha] = useState();
   const [contraSenha, setContraSenha] = useState();
 
   const { register, handleSubmit, setError, formState: { errors } } = useForm();
   const onSubmit = data => {
     // Validar senha e contra senha. Se diferentes gerar erro na senha. 
-    console.log("S: "+senha+" CS: "+contraSenha);
-    if(senha !== contraSenha){
+    //console.log("S: "+senha+" CS: "+contraSenha);
+    if(props.solicitante.senha !== contraSenha){
       setError('senha', { type: 'custom', message: 'Senha e contra senha diferentes.' });
-    } else if (senha.length < 8){
-      setError('senha', { type: 'custom', message: 'A senha deve ter pelo menos 8 caracteres.' });
     } else {
-      props.solicitante.senha = senha;
       props.salvar(); 
     }
     
@@ -50,18 +46,22 @@ const SolicitanteForm = (props) => {
               <label htmlFor="email">Email</label>
               <InputText id="email" defaultValue={props.solicitante.email}
                {...register("email", { 
-                required: {value:false, message:"o email é obrigatória."}})}
+                required: {value:true, message:"o email é obrigatória."}})}
                 onChange={handleInputChange} />
                    {errors.email && <span style={{color:'red'}}>{errors.email.message}</span>}
             </div>
 
             <div className="field col-4 md:col-4">
               <label htmlFor="senha">Senha</label>
-              <Password id="senha" 
+              <InputText type={'password'}   id="senha" 
                 {...register("senha", { 
-                })}     
-                defaultValue={senha} 
-                onChange={e => setSenha(e.target.value)} />
+                  required: {value:true, message:"A senha é obrigatório."},
+                  minLength:{value:4, message:"A senha deve ter pelo menos 4 caractres"},
+                   maxLength:{value:10, message:"A senha de ter no máximo 10 caracteres"}
+                  })}                 
+                onChange={handleInputChange} 
+                defaultValue={props.solicitante.senha} 
+                />
                {errors.senha && <span style={{color:'red'}}>{errors.senha.message}</span>}   
             </div>
 
