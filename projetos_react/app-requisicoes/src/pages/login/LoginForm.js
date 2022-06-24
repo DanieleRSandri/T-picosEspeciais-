@@ -34,7 +34,7 @@ const LoginForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Toast ref={toastRef} />
       <div>
-        <div className="card" style={{marginLeft:'40%', marginTop:'15%', width:'200px', textAlign:'center', border:'1px solid', padding:'10px'}}>
+        <div className="card" style={{marginLeft:'40%', marginTop:'15%', width:'400px', textAlign:'center', border:'2px solid', borderColor:'LightGreen', padding:'10px'}}>
           <h5>Login</h5>
           <div className="p-fluid grid formgrid">
 
@@ -64,9 +64,10 @@ const LoginForm = (props) => {
                {errors.senha && <span style={{color:'red'}}>{errors.senha.message}</span>}   
             </div>
           </div>
+          <p></p>
 
-          <Button label="Login" icon="pi pi-sign-in" type="submit"  
-                className="p-button-secondary p-button-text" />
+          <Button label="Login" icon="pi pi-sign-in"  type="submit"  
+                   className="p-button-outlined p-button-success"  />
 
         </div>
       </div>
